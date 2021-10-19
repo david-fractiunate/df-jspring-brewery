@@ -22,8 +22,8 @@ public class BeerControllerTests {
   public void init_beerDto(){
 //
     BeerDto savedDto = BeerDto.builder().id(UUID.randomUUID()).beerName("new beer").build(); //expceted result
-    BeerDto beerDto = BeerDto.builder().id(UUID.randomUUID()).beerName("new beer").build(); //expceted result
-    String beerDtoJson = objectMapper.writeValueAsString(beerDto);
+    BeerDto beerDtoV2 = BeerDto.builder().id(UUID.randomUUID()).beerName("new beer").build(); //expceted result
+    String beerDtoJson = objectMapper.writeValueAsString(beerDtoV2);
 
 
 

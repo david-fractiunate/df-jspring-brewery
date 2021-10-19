@@ -3,6 +3,7 @@ package de.fractiunate.dfjspringbrewery.services;
 import de.fractiunate.dfjspringbrewery.web.model.CustomerDto;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -56,6 +57,11 @@ public class CustomerServiceImpl implements CustomerService {
   @Override
   public boolean deleteCustomerById(UUID customerId) {
     return customers.removeIf(obj -> obj.getCustomerUuid() == customerId);
+  }
+
+  @Override
+  public List<CustomerDto> getAllCustomers() {
+    return (customers == null || customers.isEmpty()) ? Collections.emptyList() : customers;
   }
 
   private void doNothing() {

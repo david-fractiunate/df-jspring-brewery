@@ -3,6 +3,7 @@ package de.fractiunate.dfjspringbrewery.web.controller;
 import de.fractiunate.dfjspringbrewery.services.CustomerService;
 import de.fractiunate.dfjspringbrewery.services.CustomerService.ResourceNotFoundException;
 import de.fractiunate.dfjspringbrewery.web.model.CustomerDto;
+import java.util.List;
 import java.util.UUID;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,12 @@ public class CustomerController {
 
   public CustomerController(CustomerService customerService) {
     this.customerService = customerService;
+  }
+
+
+  @GetMapping({"/all"})
+  public ResponseEntity<List<CustomerDto>> listCustomers() {
+    return new ResponseEntity<>(customerService.getAllCustomers(),HttpStatus.OK);
   }
 
   @GetMapping({"/{customerId}"})

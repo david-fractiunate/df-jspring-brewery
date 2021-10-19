@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * baseurl for the entire class
  */
+@Deprecated
 @RequestMapping("/api/v1/beer")
 @RestController
 public class BeerController {
@@ -54,8 +55,8 @@ public class BeerController {
 //  PUT == IDEMPOTENT, no changes on multiple calls
   @PutMapping("/{beerId}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void handelUpdate(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto) {
-    beerService.updateBeer(beerId, beerDto);
+  public void handelUpdate(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDtoV2) {
+    beerService.updateBeer(beerId, beerDtoV2);
   }
 
   @DeleteMapping("/{beerId}")

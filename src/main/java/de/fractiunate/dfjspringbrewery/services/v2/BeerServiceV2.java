@@ -1,9 +1,9 @@
-package de.fractiunate.dfjspringbrewery.services;
+package de.fractiunate.dfjspringbrewery.services.v2;
 
 import de.fractiunate.dfjspringbrewery.web.model.BeerDto;
 import java.util.UUID;
 
-public interface BeerService {
+public interface BeerServiceV2 {
 
   BeerDto getBeerById(UUID beerId);
 

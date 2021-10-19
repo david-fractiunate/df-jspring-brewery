@@ -1,14 +1,14 @@
-package de.fractiunate.dfjspringbrewery.services;
+package de.fractiunate.dfjspringbrewery.services.v2;
 
 import de.fractiunate.dfjspringbrewery.web.model.BeerDto;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-// GPA or Mongo instead of Impl for specialization
 @Slf4j
 @Service
-public class BeerServiceImpl implements BeerService {
+
+public class BeerServiceV2Impl implements BeerServiceV2 {
 
   @Override
   public BeerDto getBeerById(UUID beerId) {
